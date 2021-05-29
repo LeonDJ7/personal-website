@@ -6,14 +6,14 @@ const Resume = (props) => {
 
     const styles = {
 
-        root: {
+        parent: {
             width: '100%',
             height: '90vh'
         }
     }
     return (
-        <div style={styles['root']}>
-            <iframe type="application/pdf" src={resume} width="100%" height="100%" />
+        <div style={styles['parent']}>
+            <iframe type='application/pdf' src={resume} width="100%" height='100%' title='resume' />
         </div>
     )
 }

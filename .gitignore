@@ -20,7 +20,6 @@
 .env.production.local
 .env
 config.js
-/client/config.js
 
 
 npm-debug.log*

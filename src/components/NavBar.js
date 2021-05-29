@@ -8,19 +8,25 @@ import portfolioIcon from '../images/portfolio_icon.png'
 const styles = {
 
     root: {
-        paddingBottom: '2vh',
-        height: '10vh'
+        paddingBottom: '3vh',
+        borderBottom: '5px solid papayawhip',
+        display: 'flex'
+
     },
     header: {
         marginTop: '3vh',
         marginLeft: '5vh',
-        display: 'inline-block',
+        display: 'flex',
+        flexGrow: '1',
+        alignItems: 'center',
+        alignContent: 'center',
     },
     headerLabel: {
         display: 'inline-block',
         fontSize: '20px',
-        fontFamily: 'Avenir Medium',
+        fontFamily: 'Avenir Black',
         marginLeft: '1.5vh',
+        color: 'rosybrown'
     },
     options: {
         float: 'right',
@@ -28,8 +34,9 @@ const styles = {
         marginRight: '7vh',
     },
     optionsButton: {
-        fontFamily: 'Avenir',
-        fontSize: '18px',
+        fontFamily: 'Avenir Medium',
+        fontSize: '20px',
+        color: 'dimgrey'
     }
 
 }
@@ -40,8 +47,12 @@ const NavBar = (props) => {
 
         return (
             <div style={styles['header']}>
-                <Avatar src={portfolioIcon} shape='square' size='medium' icon={<UserOutlined />}/>
-                <span style={styles['headerLabel']}> Leon Djusberg </span>
+                <Link to="/">
+                    <Avatar src={portfolioIcon} shape='square' size='large' icon={<UserOutlined />}/>
+                </Link>
+                <Link to="/">
+                    <span style={styles['headerLabel']}> Leon Djusberg </span>
+                </Link>
             </div>
         )
     }

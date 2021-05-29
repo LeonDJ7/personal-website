@@ -1,6 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
-import axios from 'axios'
 import config from '../../config'
 import 'antd/dist/antd.css'
 import { Button, Input, Typography, Alert } from 'antd'
@@ -12,7 +10,7 @@ const { TextArea } = Input;
 
 const styles = {
 
-    root: {
+    parent: {
         width: '60%',
         textAlign: 'center',
         margin: 'auto auto',
@@ -186,13 +184,13 @@ const Contact = (props) => {
     }
 
     return (
-        <div style={styles['root']}>
+        <div style={styles['parent']}>
             <EmailInputs />
             <SelfDescription />
             <div style={styles['imageContainer']}>
-                <input onClick={() => { redirect('https://www.linkedin.com/in/leon-djusberg-53a975194/') }} style={styles['image']} type='image' src={linkedin}/>
-                <input onClick={() => { redirect('https://github.com/LeonDJ7') }} style={styles['image']} type='image' src={github}/>
-                <input onClick={() => { redirect('https://www.instagram.com/leon.djusberg/') }} style={styles['image']} type='image' src={instagram}/>
+                <input onClick={() => { redirect('https://www.linkedin.com/in/leon-djusberg-53a975194/') }} style={styles['image']} type='image' src={linkedin} alt=''/>
+                <input onClick={() => { redirect('https://github.com/LeonDJ7') }} style={styles['image']} type='image' src={github} alt=''/>
+                <input onClick={() => { redirect('https://www.instagram.com/leon.djusberg/') }} style={styles['image']} type='image' src={instagram} alt=''/>
             </div>
         </div>
     )
