@@ -1,5 +1,4 @@
 import React from 'react'
-import 'antd/dist/antd.css'
 import resume from './resume.pdf'
 
 const Resume = (props) => {

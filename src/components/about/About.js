@@ -2,7 +2,8 @@ import React from 'react'
 import 'antd/dist/antd.css'
 import { Button, Typography } from 'antd'
 import $ from 'jquery'
-import TypeItReact from "typeit-react";
+import TypeIt from "typeit-react";
+import anime from 'animejs'
 
 
 const styles = {
@@ -10,7 +11,7 @@ const styles = {
     parent: {
         marginTop: '18vh',
         paddingLeft: '15%',
-        paddingRight: '30%'
+        paddingRight: '25%'
     },
     title: {
         fontFamily: 'Avenir Black',
@@ -23,51 +24,71 @@ const styles = {
         marginBottom: '2%'
     },
     readMore: {
-        position: 'fixed'
+        position: 'fixed',
+        display: 'inline-block'
     },
 }
 
 const About = (props) => {
 
     const [showMore, setShowMore] = React.useState(true)
-    const [instance, setInstance] = React.useState(null);
-    const [frozen, setFrozen] = React.useState(true);
+    const [instance, setInstance] = React.useState(null)
+    const [frozen, setFrozen] = React.useState(true)
+    const [readMoreNeighborTop, setReadMoreNeighborTop] = React.useState(null)
 
     const shortDescription = 'I am a web and mobile developer based out of Boston looking for internship or freelance opportunities.'
     const longDescription = 'I have experience working as a Software Engineering Intern developing both the front and back ends of a web application using React, and have been developing iOS apps with Swift since my senior year of high school.'
 
-    //const offset = $('#readMore').offset().top - $('#description').offset().top
 
     const animate = () => {
 
+        setFrozen(false)
+        instance.unfreeze()
+
+        if (!readMoreNeighborTop) { setReadMoreNeighborTop($('#readMoreNeighbor').offset().top)}
+
         if (showMore) {
 
-            $('#description').animate({
+            anime({
+                targets: '#description',
                 paddingLeft: '18vh',
-            }, 'slow')
+            })
 
-            $('#readMore').animate({
+            anime({
+                targets: '#readMore',
                 top: $('#description').offset().top
-            }, 'linear')
+            })
 
             $('#readMoreButton').html('read less...')
 
         } else {
 
-            $('#description').animate({
-                paddingLeft: '0',
-            }, 'slow')
+            const attemptAnime = () => {
+                setTimeout( () => {
 
-            $('#readMore').animate({
-                top: '0'
-            }, 'linear')
+                    if (!$('#description').html().includes('experience')) {
+                        console.log()
+                        anime({
+                            targets: '#description',
+                            paddingLeft: '0',
+                        })
+            
+                        anime({
+                            targets: '#readMore',
+                            top: readMoreNeighborTop - 1/2 * $('#readMore').height()
+                        })
+                    } else {
+                        attemptAnime()
+                    }
+    
+                }, 100)
+            }
+
+            attemptAnime()
 
             $('#readMoreButton').html('read more...')
 
         }
-
-        setFrozen(false)
-        instance.unfreeze()
 
     }
 
@@ -75,7 +96,7 @@ const About = (props) => {
         <div id='parent' style={styles['parent']}>
             <Typography id='title' style={styles['title']}> Greetings! </Typography>
             <div id='description' style={styles['description']}>
-                <TypeItReact 
+                <TypeIt
                     id='typewriter'
                     options={{
                         strings: [shortDescription, longDescription],
@@ -95,6 +116,8 @@ const About = (props) => {
                 {instance && !frozen && <Button id='readMoreButton' danger> {showMore ? 'read more...' : 'read less...'} </Button>}
                 {!instance && <Button id='readMoreButton' danger> {showMore ? 'read more...' : 'read less...'} </Button>}
             </div>
+            <div id='readMoreNeighbor' style={{display: 'inline-block'}}/>
+            
         </div>
     )
 }
