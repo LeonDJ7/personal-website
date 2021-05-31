@@ -9,7 +9,7 @@ import anime from 'animejs'
 const styles = {
 
     parent: {
-        marginTop: '18vh',
+        paddingTop: '8%',
         paddingLeft: '15%',
         paddingRight: '25%'
     },
@@ -36,8 +36,8 @@ const About = (props) => {
     const [frozen, setFrozen] = React.useState(true)
     const [readMoreNeighborTop, setReadMoreNeighborTop] = React.useState(null)
 
-    const shortDescription = 'I am a web and mobile developer based out of Boston looking for internship or freelance opportunities.'
-    const longDescription = 'I have experience working as a Software Engineering Intern developing both the front and back ends of a web application using React, and have been developing iOS apps with Swift since my senior year of high school.'
+    const shortDescription = 'I\'m a full stack developer based out of Boston, passionate about building clean, beautiful web and mobile applications.'
+    const longDescription = 'Currently, I attend the University of Massachusetts Amherst with a major in computer science and minor in psychology. <br><br> I have some professional experience as a software engineer intern, where I was tasked with working on both front and back end features of a task management web application. Apart from this, the majority of my experience comes from personal projects... and YouTube.<br><br>Outside of programming, soccer has always been my passion both as a player and a fan. As of now I play semi professionally in Boston and, of course, support the New England Revolution. I have also always loved video games (League of Legends at the moment), and recently began making <a href=\"https://soundcloud.com/leondotwav\">lo-fi music</a>. Occasionally, I play a lot of golf in a really short amount of time.'
 
 
     const animate = () => {
@@ -100,7 +100,7 @@ const About = (props) => {
                     id='typewriter'
                     options={{
                         strings: [shortDescription, longDescription],
-                        speed: 10,
+                        speed: 5,
                         breakLines: false,
                         loop: true,
                         afterString: async (step, instance) => {

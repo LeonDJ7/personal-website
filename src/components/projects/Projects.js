@@ -12,7 +12,7 @@ const { Search } = Input;
 const personalProjects = [
     {
         name: 'USMNT Fan Hub',
-        tags: ['UIkit', 'Firebase', 'Swift', 'Admob', 'lol', 'koolaide'],
+        tags: ['UIkit', 'Firebase', 'Swift', 'Admob', 'SwiftSoup'],
         links: ['https://apps.apple.com/us/app/usmnt-fan-hub/id1527654710', 'https://github.com/LeonDJ7/usmnt-fan-hub'],
         icon: usmntIcon,
     },
