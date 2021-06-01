@@ -2,6 +2,7 @@ import React from 'react'
 import config from '../../config'
 import 'antd/dist/antd.css'
 import { Button, Input, Typography, Alert } from 'antd'
+import $ from 'jquery'
 import linkedin from '../../images/linkedin_icon.png'
 import github from '../../images/github_icon.png'
 import instagram from '../../images/instagram_icon.png'
@@ -11,18 +12,17 @@ const { TextArea } = Input;
 const styles = {
 
     parent: {
-        width: '60%',
-        textAlign: 'center',
-        margin: 'auto auto',
-        marginTop: '20vh',
+        display: 'flex',
+        flexDirection: 'row',
+        paddingTop: '10%',
+        paddingLeft: '20%',
+        paddingRight: '20%'
     },
-    emailInputs: {
-        width: '55%',
-        float: 'left'
+    inputContainer: {
+        width: '100%',
+        paddingRight: '5%'
     },
     selfDescription: {
-        width: '40%',
-        float: 'right'
     },
     firstName: {
         width: '48%',
@@ -45,27 +45,29 @@ const styles = {
     },
     descriptionTitle: {
         width: '100%',
-        fontFamily: 'Avenir Medium',
-        fontSize: '28px'
+        fontFamily: 'Montserrat',
+        fontWeight: '600',
+        fontSize: '24px'
     },
     descriptionMessage: {
         width: '100%',
-        fontFamily: 'Avenir'
+        fontFamily: 'Montserrat',
+        fontWeight: '400',
     },
     image: {
         width: '32px',
-        marginRight: '1%',
+        height: '32px',
+        marginRight: '1.5%',
+        marginLeft: '1.5%',
     },
-    imageContainer: {
-        position: 'absolute',
-        bottom: '20%',
-        left: '0',
-        right: '0',
-        margin: 'auto',
+    imagesContainer: {
+        marginTop: '5%',
+        display: 'flex',
+        flexDirection: 'row',
     },
     alert: {
         marginBottom: '4%'
-    }
+    },
 
 }
 
@@ -73,7 +75,7 @@ const Contact = (props) => {
 
     const redirect = (url) => { window.open(url, '_blank') }
 
-    const EmailInputs = (props) => {
+    const InputContainer = (props) => {
 
         const [firstName, setFirstName] = React.useState('')
         const [lastName, setLastName] = React.useState('')
@@ -136,15 +138,25 @@ const Contact = (props) => {
 
             sendMail(firstName + ' ' + lastName, email, message)
 
+            /*
+
             setFirstName('')
             setLastName('')
             setEmail('')
             setMessage('')
 
+            document.getElementById('messageInput').innerHTML = ''
+            console.log(document.getElementById('messageInput').innerHTML)
+            document.getElementById('emailInput').innerHTML = ''
+            document.getElementById('firstNameInput').innerHTML = ''
+            document.getElementById('lastNameInput').innerHTML = ''
+
+            */
+
         }
 
         return (
-            <span style={styles['emailInputs']}>
+            <div style={styles['inputContainer']}>
                 { showErrorAlert && <div>
                     <Alert showIcon style={styles['alert']} message={alert} type='error' />
                 </div> }
@@ -164,7 +176,7 @@ const Contact = (props) => {
                 <div>
                     <Button onClick={sendMessage} style={styles['sendButton']} type='primary' danger>send</Button>
                 </div>
-            </span>
+            </div>
         )
 
     }
@@ -172,26 +184,26 @@ const Contact = (props) => {
     const SelfDescription = () => {
 
         return (
-            <span style={styles['selfDescription']}>
+            <div style={styles['selfDescription']}>
                 <Typography style={styles['descriptionTitle']}>
                     Feel free to reach out, about literally anything
                 </Typography>
                 <p style={styles['descriptionMessage']}>
                     I'm very open to any projects ideas, internship opportunities, freelance opportunities, etc...
                 </p>
-            </span>
+                <div style={styles['imagesContainer']}>
+                    <input onClick={() => { redirect('https://www.linkedin.com/in/leon-djusberg-53a975194/') }} style={styles['image']} type='image' src={linkedin} alt=''/>
+                    <input onClick={() => { redirect('https://github.com/LeonDJ7') }} style={styles['image']} type='image' src={github} alt=''/>
+                    <input onClick={() => { redirect('https://www.instagram.com/leon.djusberg/') }} style={styles['image']} type='image' src={instagram} alt=''/>
+                </div>
+            </div>
         )
     }
 
     return (
         <div style={styles['parent']}>
-            <EmailInputs />
+            <InputContainer />
             <SelfDescription />
-            <div style={styles['imageContainer']}>
-                <input onClick={() => { redirect('https://www.linkedin.com/in/leon-djusberg-53a975194/') }} style={styles['image']} type='image' src={linkedin} alt=''/>
-                <input onClick={() => { redirect('https://github.com/LeonDJ7') }} style={styles['image']} type='image' src={github} alt=''/>
-                <input onClick={() => { redirect('https://www.instagram.com/leon.djusberg/') }} style={styles['image']} type='image' src={instagram} alt=''/>
-            </div>
         </div>
     )
 }

@@ -8,12 +8,14 @@ const styles = {
 
     parent: {
         width: '250px',
+        marginRight: '3%'
     },
     tag: {
         marginTop: '3%'
     },
     name: {
-        fontFamily: 'Avenir',
+        fontFamily: 'Montserrat',
+        fontWeight: '400',
         fontSize: '16px',
         flexGrow: '1',
         display: 'flex',

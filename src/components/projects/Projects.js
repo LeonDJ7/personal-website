@@ -42,15 +42,16 @@ const styles = {
         paddingBottom: '4%',
     },
     sectionTitle: {
-        fontFamily: 'Avenir Black',
+        fontFamily: 'Montserrat',
+        fontWeight: '600',
         fontSize: '40px'
     },
     projectsContainer: {
         marginTop: '2%',
         marginBottom: '3%',
+        overflow: 'auto',
         display: 'flex',
         flexDirection: 'row',
-        gap: '4%',
     },
     searchBar: {
         width: '30%',
@@ -68,7 +69,7 @@ const Projects = (props) => {
             <Search onChange={ (e) => { setTagFilter(e.target.value) }} placeholder='search by tag...' style={styles['searchBar']}/>
             <Divider orientation="left" style={styles['sectionTitle']}>Personal</Divider>
             <div style={styles['projectsContainer']}>
-                { personalProjects.map((item,i) => { if (item.tags.find(tag => tag.toLowerCase().includes(tagFilter.toLowerCase())) ) { return <Personal key={i} images={item.images} name={item.name} tags={item.tags} links={item.links} icon={item.icon} /> }} )}
+                { personalProjects.map((item,i) => { if (item.tags.find(tag => tag.toLowerCase().includes(tagFilter.toLowerCase())) ) { return (<Personal key={i} images={item.images} name={item.name} tags={item.tags} links={item.links} icon={item.icon} />)}} )}
             </div>
             <Divider orientation="left" style={styles['sectionTitle']}>Freelance</Divider>
             <div style={styles['projectsContainer']}>

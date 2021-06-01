@@ -7,9 +7,9 @@ import portfolioIcon from '../images/portfolio_icon.png'
 
 const styles = {
 
-    root: {
+    parent: {
         paddingBottom: '3vh',
-        borderBottom: '5px solid papayawhip',
+        borderBottom: '5px solid lightcoral',
         display: 'flex'
 
     },
@@ -24,7 +24,8 @@ const styles = {
     headerLabel: {
         display: 'inline-block',
         fontSize: '20px',
-        fontFamily: 'Avenir Black',
+        fontFamily: 'Montserrat',
+        fontWeight: '600',
         marginLeft: '1.5vh',
         color: 'rosybrown'
     },
@@ -34,7 +35,8 @@ const styles = {
         marginRight: '7vh',
     },
     optionsButton: {
-        fontFamily: 'Avenir Medium',
+        fontFamily: 'Montserrat',
+        fontWeight: '600',
         fontSize: '20px',
         color: 'dimgrey'
     }
@@ -47,10 +49,10 @@ const NavBar = (props) => {
 
         return (
             <div style={styles['header']}>
-                <Link to="/">
+                <Link to="/personal-website">
                     <Avatar src={portfolioIcon} shape='square' size='large' icon={<UserOutlined />}/>
                 </Link>
-                <Link to="/">
+                <Link to="/personal-website">
                     <span style={styles['headerLabel']}> Leon Djusberg </span>
                 </Link>
             </div>
@@ -62,19 +64,19 @@ const NavBar = (props) => {
         return (
             <span style={styles['options']} >
 
-                <Link to="/">
+                <Link to="/personal-website">
                     <Button type='text' size='large' style={styles['optionsButton']}>About</Button>
                 </Link>
 
-                <Link to="/projects">
+                <Link to="/personal-website/projects">
                     <Button type='text' size='large' style={styles['optionsButton']}>Projects</Button>
                 </Link>
 
-                <Link to="/resume">
+                <Link to="/personal-website/resume">
                     <Button type='text' size='large' style={styles['optionsButton']}>Resume</Button>
                 </Link>
 
-                <Link to="/contact">
+                <Link to="/personal-website/contact">
                     <Button type='text' size='large' style={styles['optionsButton']}>Contact</Button>
                 </Link>
 
@@ -83,11 +85,9 @@ const NavBar = (props) => {
     }
 
     return (
-        <div style={styles['root']}>
-
+        <div style={styles['parent']}>
             <NavHeader/>
             <NavOptions/>
-
         </div>
     )
 }

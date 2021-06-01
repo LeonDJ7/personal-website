@@ -7,10 +7,10 @@ import Contact from './components/contact/Contact';
 const Main = (props) => {
     return (
         <Switch>
-            <Route exact path='/' component={About}></Route>
-            <Route exact path='/projects' component={Projects}></Route>
-            <Route exact path='/resume' component={Resume}></Route>
-            <Route exact path='/contact' component={Contact}></Route>
+            <Route exact path='/personal-website' component={About}></Route>
+            <Route exact path='/personal-website/projects' component={Projects}></Route>
+            <Route exact path='/personal-website/resume' component={Resume}></Route>
+            <Route exact path='/personal-website/contact' component={Contact}></Route>
         </Switch>
     )
 }

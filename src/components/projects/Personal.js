@@ -8,18 +8,14 @@ const styles = {
 
     parent: {
         width: '250px',
-    },
-    link: {
-
+        marginRight: '4%'
     },
     tag: {
         marginTop: '3%'
     },
-    icon: {
-
-    },
     name: {
-        fontFamily: 'Avenir',
+        fontFamily: 'Montserrat',
+        fontWeight: '400',
         fontSize: '16px',
         flexGrow: '1',
         display: 'flex',
