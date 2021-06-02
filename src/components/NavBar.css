@@ -1,0 +1,65 @@
+#navContainer {
+    border-bottom: 5px solid lightcoral;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 70px;
+}
+#header {
+    margin-left: 5vh;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    align-content: center;
+}
+#headerLabel {
+    display: inline-block;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 600;
+    margin-left: 1.5vh;
+    color: rosybrown;
+}
+#options {
+    float: right;
+    margin-right: 7vh;
+}
+.optionsButton {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 20px;
+    color: dimgrey;
+}
+.selectedIndicator {
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -18px;
+}
+#optionsDropdown {
+    display: none;
+    margin-right: 7vh;
+    font-size: 20px;
+    float: right;
+}
+.menuButton {
+    margin-right: 2em;
+    margin-left: 2em;
+    font-family: Montserrat;
+    font-weight: 400;
+    color: lightcoral;
+}
+
+@media only screen and (max-width: 768px) {
+    #optionsDropdown {
+        display: block;
+    }
+    #options {
+        display: none;
+    }
+    #headerLabel {
+        display: none;
+    }
+}
