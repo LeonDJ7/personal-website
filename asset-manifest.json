@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/personal-website/static/css/main.7e4933d4.chunk.css",
+    "main.css": "/personal-website/static/css/main.0e9b8e01.chunk.css",
     "main.js": "/personal-website/static/js/main.1321fb67.chunk.js",
     "main.js.map": "/personal-website/static/js/main.1321fb67.chunk.js.map",
     "runtime-main.js": "/personal-website/static/js/runtime-main.4a28c34c.js",
@@ -12,7 +12,7 @@
     "static/js/3.7946bb54.chunk.js.map": "/personal-website/static/js/3.7946bb54.chunk.js.map",
     "index.html": "/personal-website/index.html",
     "static/css/2.00bb4513.chunk.css.map": "/personal-website/static/css/2.00bb4513.chunk.css.map",
-    "static/css/main.7e4933d4.chunk.css.map": "/personal-website/static/css/main.7e4933d4.chunk.css.map",
+    "static/css/main.0e9b8e01.chunk.css.map": "/personal-website/static/css/main.0e9b8e01.chunk.css.map",
     "static/js/2.74e0e5c6.chunk.js.LICENSE.txt": "/personal-website/static/js/2.74e0e5c6.chunk.js.LICENSE.txt",
     "static/media/freelance_empty_icon.481720b1.png": "/personal-website/static/media/freelance_empty_icon.481720b1.png",
     "static/media/github_icon.86c01b11.png": "/personal-website/static/media/github_icon.86c01b11.png",
@@ -27,7 +27,7 @@
     "static/js/runtime-main.4a28c34c.js",
     "static/css/2.00bb4513.chunk.css",
     "static/js/2.74e0e5c6.chunk.js",
-    "static/css/main.7e4933d4.chunk.css",
+    "static/css/main.0e9b8e01.chunk.css",
     "static/js/main.1321fb67.chunk.js"
   ]
 }
