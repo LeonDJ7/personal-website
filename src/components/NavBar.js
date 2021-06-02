@@ -10,13 +10,14 @@ import $ from 'jquery'
 const styles = {
 
     parent: {
-        //paddingBottom: '3vh',
         borderBottom: '5px solid lightcoral',
-        display: 'flex'
-
+        display: 'flex',
+        alignItems: 'center',
+        alignContent: 'center',
+        height: '70px'
     },
     header: {
-        marginTop: '3vh',
+        //marginTop: '3vh',
         marginLeft: '5vh',
         display: 'flex',
         flexGrow: '1',
@@ -33,14 +34,13 @@ const styles = {
     },
     options: {
         float: 'right',
-        marginTop: '3vh',
         marginRight: '7vh',
     },
     optionsButton: {
         fontFamily: 'Montserrat',
         fontWeight: '600',
         fontSize: '20px',
-        color: 'dimgrey'
+        color: 'dimgrey',
     },
     selectedIndicator: {
         height: '5px',
@@ -48,7 +48,7 @@ const styles = {
         position: 'absolute',
         left: '0',
         right: '0',
-        bottom: '-6px'
+        bottom: '-18px'
     }
 
 }
