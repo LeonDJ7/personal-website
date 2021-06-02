@@ -1,14 +1,16 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import 'antd/dist/antd.css'
 import { Button, Avatar } from 'antd'
-import { UserOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons'
 import portfolioIcon from '../images/portfolio_icon.png'
+import FlipMove from 'react-flip-move'
+import $ from 'jquery'
 
 const styles = {
 
     parent: {
-        paddingBottom: '3vh',
+        //paddingBottom: '3vh',
         borderBottom: '5px solid lightcoral',
         display: 'flex'
 
@@ -39,6 +41,14 @@ const styles = {
         fontWeight: '600',
         fontSize: '20px',
         color: 'dimgrey'
+    },
+    selectedIndicator: {
+        height: '5px',
+        backgroundColor: 'white',
+        position: 'absolute',
+        left: '0',
+        right: '0',
+        bottom: '-6px'
     }
 
 }
@@ -61,25 +71,37 @@ const NavBar = (props) => {
 
     const NavOptions = (props) => {
 
+        const [option, setOption] = React.useState('about')
+
         return (
             <span style={styles['options']} >
 
                 <Link to="/personal-website">
-                    <Button type='text' size='large' style={styles['optionsButton']}>About</Button>
+                    <Button id='1' onClick={() => { setOption('about'); console.log($('#1').width()) }} type='text' size='large' style={styles['optionsButton']}>About
+                        { option == 'about' && <div style={styles['selectedIndicator']}></div> }
+                    </Button>
+                    
                 </Link>
 
                 <Link to="/personal-website/projects">
-                    <Button type='text' size='large' style={styles['optionsButton']}>Projects</Button>
+                    <Button id='2' onClick={() => { setOption('projects'); console.log($('#2').width()) }} type='text' size='large' style={styles['optionsButton']}>Projects
+                        { option == 'projects' && <div style={styles['selectedIndicator']}></div> }
+                    </Button>
                 </Link>
 
                 <Link to="/personal-website/resume">
-                    <Button type='text' size='large' style={styles['optionsButton']}>Resume</Button>
+                    <Button id='3' onClick={() => { setOption('resume'); console.log($('#3').width()) }} type='text' size='large' style={styles['optionsButton']}>Resume
+                        { option == 'resume' && <div style={styles['selectedIndicator']}></div> }
+                    </Button>
                 </Link>
 
                 <Link to="/personal-website/contact">
-                    <Button type='text' size='large' style={styles['optionsButton']}>Contact</Button>
+                    <Button id='4' onClick={() => { setOption('contact'); console.log($('#4').width()) }} type='text' size='large' style={styles['optionsButton']}>Contact
+                        { option == 'contact' && <div style={styles['selectedIndicator']}></div> }
+                    </Button>
                 </Link>
 
+                
             </span>
         )
     }
