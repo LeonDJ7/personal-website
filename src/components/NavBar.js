@@ -8,12 +8,14 @@ import './NavBar.css'
 
 const NavBar = (props) => {
 
-    const [pathname, setPathname] = React.useState(window.location.hash.split("#/personal-website")[1])
+    const [pathname, setPathname] = React.useState(window.location.hash)
+
+    console.log(window.location)
 
     const NavHeader = (props) => {
 
         return (
-            <div id='header' onClick={() => {setPathname('/')}}>
+            <div id='header' onClick={() => {setPathname('#/')}}>
                 <Link to="/">
                     <Avatar src={portfolioIcon} shape='square' size='large' icon={<UserOutlined />}/>
                 </Link>
@@ -30,26 +32,26 @@ const NavBar = (props) => {
             <span id='options' >
 
                 <Link to="/">
-                    <Button id='1' onClick={() => {setPathname('/')}} type='text' size='large' className='optionsButton'>About
-                        { pathname === '/' && <div className='selectedIndicator'></div> }
+                    <Button id='1' onClick={() => {setPathname('#/')}} type='text' size='large' className='optionsButton'>About
+                        { pathname === '#/' && <div className='selectedIndicator'></div> }
                     </Button>
                 </Link>
 
                 <Link to="/projects">
-                    <Button id='2' onClick={() => {setPathname('/projects')}} type='text' size='large' className='optionsButton'>Projects
-                        { pathname === '/projects' && <div className='selectedIndicator'></div> }
+                    <Button id='2' onClick={() => {setPathname('#/projects')}} type='text' size='large' className='optionsButton'>Projects
+                        { pathname === '#/projects' && <div className='selectedIndicator'></div> }
                     </Button>
                 </Link>
 
                 <Link to="/resume">
-                    <Button id='3' onClick={() => {setPathname('/resume')}} type='text' size='large' className='optionsButton'>Resume
-                        { pathname === '/resume' && <div className='selectedIndicator'></div> }
+                    <Button id='3' onClick={() => {setPathname('#/resume')}} type='text' size='large' className='optionsButton'>Resume
+                        { pathname === '#/resume' && <div className='selectedIndicator'></div> }
                     </Button>
                 </Link>
 
                 <Link to="/contact">
-                    <Button id='4' onClick={() => {setPathname('/contact')}} type='text' size='large' className='optionsButton'>Contact
-                        { pathname === '/contact' && <div className='selectedIndicator'></div> }
+                    <Button id='4' onClick={() => {setPathname('#/contact')}} type='text' size='large' className='optionsButton'>Contact
+                        { pathname === '#/contact' && <div className='selectedIndicator'></div> }
                     </Button>
                 </Link>
                 
