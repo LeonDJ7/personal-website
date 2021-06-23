@@ -2,27 +2,22 @@ import React from 'react'
 import config from '../../config'
 import 'antd/dist/antd.css'
 import { Button, Input, Typography, Alert } from 'antd'
-import $ from 'jquery'
 import linkedin from '../../images/linkedin_icon.png'
 import github from '../../images/github_icon.png'
 import instagram from '../../images/instagram_icon.png'
+import './Contact.css'
+
 
 const { TextArea } = Input;
 
 const styles = {
 
-    parent: {
-        display: 'flex',
-        flexDirection: 'row',
-        paddingTop: '10%',
-        paddingLeft: '20%',
-        paddingRight: '20%'
-    },
     inputContainer: {
         width: '100%',
         paddingRight: '5%'
     },
     selfDescription: {
+        paddingBottom: '5%'
     },
     firstName: {
         width: '48%',
@@ -157,22 +152,22 @@ const Contact = (props) => {
 
         return (
             <div style={styles['inputContainer']}>
-                { showErrorAlert && <div>
-                    <Alert showIcon style={styles['alert']} message={alert} type='error' />
-                </div> }
-                { showSuccessAlert && <div>
-                    <Alert showIcon style={styles['alert']} message={alert} type='success' />
-                </div> }
-                <div>
-                    <Input onChange={(e) => { setFirstName(e.target.value) }} style={styles['firstName']} id='firstNameInput' placeholder='first name'/>
-                    <Input onChange={(e) => { setLastName(e.target.value) }} style={styles['lastName']} id='lastNameInput' placeholder='last name'/>
-                </div>
-                <div>
-                    <Input onChange={(e) => { setEmail(e.target.value) }} style={styles['email']} id='emailInput' placeholder='email'/>
-                </div>
-                <div>
-                    <TextArea onChange={(e) => { setMessage(e.target.value) }} autoSize={{ minRows: 4, maxRows: 8 }} style={styles['message']} id='messageInput' placeholder='message'/>
-                </div>
+                    { showErrorAlert && <div>
+                        <Alert showIcon style={styles['alert']} message={alert} type='error' />
+                    </div> }
+                    { showSuccessAlert && <div>
+                        <Alert showIcon style={styles['alert']} message={alert} type='success' />
+                    </div> }
+                    <div>
+                        <Input onChange={(e) => { setFirstName(e.target.value) }} style={styles['firstName']} id='firstNameInput' placeholder='first name'/>
+                        <Input onChange={(e) => { setLastName(e.target.value) }} style={styles['lastName']} id='lastNameInput' placeholder='last name'/>
+                    </div>
+                    <div>
+                        <Input onChange={(e) => { setEmail(e.target.value) }} style={styles['email']} id='emailInput' placeholder='email'/>
+                    </div>
+                    <div>
+                        <TextArea onChange={(e) => { setMessage(e.target.value) }} autoSize={{ minRows: 4, maxRows: 8 }} style={styles['message']} id='messageInput' placeholder='message'/>
+                    </div>
                 <div>
                     <Button onClick={sendMessage} style={styles['sendButton']} type='primary' danger>send</Button>
                 </div>
@@ -201,7 +196,7 @@ const Contact = (props) => {
     }
 
     return (
-        <div style={styles['parent']}>
+        <div id='contact-root'>
             <InputContainer />
             <SelfDescription />
         </div>

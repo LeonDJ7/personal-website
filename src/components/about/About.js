@@ -11,7 +11,7 @@ const styles = {
     parent: {
         paddingTop: '8%',
         paddingLeft: '15%',
-        paddingRight: '25%'
+        paddingRight: '15%'
     },
     title: {
         fontFamily: 'Montserrat',

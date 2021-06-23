@@ -6,19 +6,20 @@ import { Divider, Input } from 'antd'
 import usmntIcon from '../../images/usmnt_fan_hub_icon.png'
 import golfIcon from '../../images/golf_stat_caddy_icon.png'
 import emptyIcon from '../../images/freelance_empty_icon.png'
-const { Search } = Input;
+import './Projects.css'
 
+const { Search } = Input
 
 const personalProjects = [
     {
         name: 'USMNT Fan Hub',
-        tags: ['UIkit', 'Firebase', 'Swift', 'Admob', 'SwiftSoup'],
+        tags: ['UIkit', 'Firebase', 'Swift', 'Google Admob', 'SwiftSoup'],
         links: ['https://apps.apple.com/us/app/usmnt-fan-hub/id1527654710', 'https://github.com/LeonDJ7/usmnt-fan-hub'],
         icon: usmntIcon,
     },
     {
         name: 'Golf Stat Caddy',
-        tags: ['UIkit', 'Firebase', 'Swift', 'Admob'],
+        tags: ['UIkit', 'Firebase', 'Swift', 'Google Admob'],
         links: ['https://apps.apple.com/us/app/golf-stat-caddy/id1437417339', 'https://github.com/LeonDJ7/golf-stat-caddy'],
         icon: golfIcon,
     },
@@ -53,10 +54,6 @@ const styles = {
         display: 'flex',
         flexDirection: 'row',
     },
-    searchBar: {
-        width: '30%',
-        float: 'right'
-    }
 
 }
 
@@ -66,7 +63,7 @@ const Projects = (props) => {
 
     return (
         <div style={styles['parent']}>
-            <Search onChange={ (e) => { setTagFilter(e.target.value) }} placeholder='search by tag...' style={styles['searchBar']}/>
+            <Search id='projects-search' onChange={ (e) => { setTagFilter(e.target.value) }} placeholder='search by tag...' />
             <Divider orientation="left" style={styles['sectionTitle']}>Personal</Divider>
             <div style={styles['projectsContainer']}>
                 { personalProjects.map((item,i) => { if (item.tags.find(tag => tag.toLowerCase().includes(tagFilter.toLowerCase())) ) { return (<Personal key={i} images={item.images} name={item.name} tags={item.tags} links={item.links} icon={item.icon} />)}} )}

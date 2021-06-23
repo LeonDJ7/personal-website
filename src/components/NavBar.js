@@ -4,19 +4,20 @@ import 'antd/dist/antd.css'
 import { Button, Avatar, Dropdown, Menu } from 'antd'
 import { UserOutlined, MenuOutlined } from '@ant-design/icons'
 import portfolioIcon from '../images/portfolio_icon.png'
-import $ from 'jquery'
 import './NavBar.css'
 
 const NavBar = (props) => {
 
+    const [pathname, setPathname] = React.useState(window.location.hash.split("#/personal-website")[1])
+
     const NavHeader = (props) => {
 
         return (
-            <div id='header' >
-                <Link to="/personal-website">
+            <div id='header' onClick={() => {setPathname('/')}}>
+                <Link to="/">
                     <Avatar src={portfolioIcon} shape='square' size='large' icon={<UserOutlined />}/>
                 </Link>
-                <Link to="/personal-website">
+                <Link to="/">
                     <span id='headerLabel' > Leon Djusberg </span>
                 </Link>
             </div>
@@ -25,33 +26,30 @@ const NavBar = (props) => {
 
     const NavOptions = (props) => {
 
-        const [option, setOption] = React.useState('about')
-
         return (
             <span id='options' >
 
-                <Link to="/personal-website">
-                    <Button id='1' onClick={() => { setOption('about'); console.log($('#1').width()) }} type='text' size='large' className='optionsButton'>About
-                        { option === 'about' && <div className='selectedIndicator'></div> }
-                    </Button>
-                    
-                </Link>
-
-                <Link to="/personal-website/projects">
-                    <Button id='2' onClick={() => { setOption('projects'); console.log($('#2').width()) }} type='text' size='large' className='optionsButton'>Projects
-                        { option === 'projects' && <div className='selectedIndicator'></div> }
+                <Link to="/">
+                    <Button id='1' onClick={() => {setPathname('/')}} type='text' size='large' className='optionsButton'>About
+                        { pathname === '/' && <div className='selectedIndicator'></div> }
                     </Button>
                 </Link>
 
-                <Link to="/personal-website/resume">
-                    <Button id='3' onClick={() => { setOption('resume'); console.log($('#3').width()) }} type='text' size='large' className='optionsButton'>Resume
-                        { option === 'resume' && <div className='selectedIndicator'></div> }
+                <Link to="/projects">
+                    <Button id='2' onClick={() => {setPathname('/projects')}} type='text' size='large' className='optionsButton'>Projects
+                        { pathname === '/projects' && <div className='selectedIndicator'></div> }
                     </Button>
                 </Link>
 
-                <Link to="/personal-website/contact">
-                    <Button id='4' onClick={() => { setOption('contact'); console.log($('#4').width()) }} type='text' size='large' className='optionsButton'>Contact
-                        { option === 'contact' && <div className='selectedIndicator'></div> }
+                <Link to="/resume">
+                    <Button id='3' onClick={() => {setPathname('/resume')}} type='text' size='large' className='optionsButton'>Resume
+                        { pathname === '/resume' && <div className='selectedIndicator'></div> }
+                    </Button>
+                </Link>
+
+                <Link to="/contact">
+                    <Button id='4' onClick={() => {setPathname('/contact')}} type='text' size='large' className='optionsButton'>Contact
+                        { pathname === '/contact' && <div className='selectedIndicator'></div> }
                     </Button>
                 </Link>
                 
@@ -64,7 +62,7 @@ const NavBar = (props) => {
         const DropdownMenu = (props) => {
             
             return (
-                <Menu >
+                <Menu>
                     <Link to="/personal-website">
                         <Menu.Item {...props} key="1" className='menuButton'>
                             about
@@ -91,7 +89,7 @@ const NavBar = (props) => {
 
         return (
             <span id='optionsDropdown' >
-                <Dropdown overlay={DropdownMenu} >
+                <Dropdown onClick={(e) => { e.preventDefault() }} overlay={DropdownMenu} >
                     <Button icon={<MenuOutlined/>} />
                 </Dropdown>
             </span>

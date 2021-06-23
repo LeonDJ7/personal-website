@@ -1,0 +1,11 @@
+#contact-root {
+    display: flex;
+    flex-direction: row;
+    padding: 10% 20% 10% 20%;
+}
+
+@media only screen and (max-width: 768px) {
+    #contact-root {
+        flex-direction: column-reverse;
+    }
+}

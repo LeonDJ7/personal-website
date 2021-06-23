@@ -1,0 +1,10 @@
+#projects-search {
+    width: 30%;
+    float: right;
+}
+
+@media only screen and (max-width: 768px) {
+    #projects-search {
+        width: 50%;
+    }
+}

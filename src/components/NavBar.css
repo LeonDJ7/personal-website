@@ -31,12 +31,12 @@
     color: dimgrey;
 }
 .selectedIndicator {
-    height: 5px;
+    height: 10px;
     background-color: white;
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -18px;
+    bottom: -20px;
 }
 #optionsDropdown {
     display: none;
