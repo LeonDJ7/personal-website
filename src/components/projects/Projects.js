@@ -28,7 +28,7 @@ const personalProjects = [
 const freelanceProjects = [
     {
         name: 'Absolute Builders LLC',
-        tags: ['TypeScript', 'Angular', 'Mongoose', 'Node.js', 'MongoDB', 'Express.js', 'Heroku', 'AWS S3', 'Angular Material', 'SmtpJS'],
+        tags: ['TypeScript', 'Angular', 'Mongoose', 'Node.js', 'MongoDB', 'Express.js', 'Heroku', 'AWS S3', 'Angular Material', 'SmtpJS', 'HTML', 'CSS', 'Figma'],
         links: ['https://absolute-builders.herokuapp.com', 'https://github.com/LeonDJ7/absolute-builders-website'],
         icon: abIcon,
     }
@@ -70,7 +70,7 @@ const Projects = (props) => {
             </div>
             <Divider orientation="left" style={styles['sectionTitle']}>Freelance</Divider>
             <div style={styles['projectsContainer']}>
-                { freelanceProjects.map((item,i) => { if (item.tags.find(tag => tag.includes(tagFilter)) || tagFilter === '' ) { return <Freelance key={i} images={item.images} name={item.name} tags={item.tags} links={item.links} icon={item.icon} /> }} )}
+                { freelanceProjects.map((item,i) => { if (item.tags.find(tag => tag.toLowerCase().includes(tagFilter.toLowerCase())) ) { return <Freelance key={i} images={item.images} name={item.name} tags={item.tags} links={item.links} icon={item.icon} /> }} )}
             </div>
         </div>
     )

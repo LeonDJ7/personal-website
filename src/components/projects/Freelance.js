@@ -58,6 +58,10 @@ const Freelance = (props) => {
             }}/>
             <div style={styles['nameLinksContainer']}>
                 <Typography style={styles['name']}>{name}</Typography>
+                <span style={styles['linkContainer']}>
+                    <input onClick={() => { redirect(links[1]) }} src={codeArrow} alt='' style={styles['link']} type='image' />
+                    <input onClick={() => { redirect(links[0]) }} src={takeToPage} alt='' style={styles['link']} type='image' />
+                </span>
             </div>
             <div style={styles['tagContainer']}>
                 {tags.map((item, i) => <Tag style={styles['tag']} key={i} color='gold' > {item} </Tag>)}
