@@ -5,7 +5,7 @@ import 'antd/dist/antd.css'
 import { Divider, Input } from 'antd'
 import usmntIcon from '../../images/usmnt_fan_hub_icon.png'
 import golfIcon from '../../images/golf_stat_caddy_icon.png'
-import emptyIcon from '../../images/freelance_empty_icon.png'
+import abIcon from '../../images/absolute_builders_icon.png'
 import './Projects.css'
 
 const { Search } = Input
@@ -27,10 +27,10 @@ const personalProjects = [
 
 const freelanceProjects = [
     {
-        name: 'Working on it...',
-        tags: [],
-        links: [],
-        icon: emptyIcon,
+        name: 'Absolute Builders LLC',
+        tags: ['TypeScript', 'Angular', 'Mongoose', 'Node.js', 'MongoDB', 'Express.js', 'Heroku', 'AWS S3', 'Angular Material', 'SmtpJS'],
+        links: ['https://absolute-builders.herokuapp.com', 'https://github.com/LeonDJ7/absolute-builders-website'],
+        icon: abIcon,
     }
 ]
 
