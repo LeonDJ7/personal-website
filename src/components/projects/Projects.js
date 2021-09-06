@@ -6,6 +6,7 @@ import { Divider, Input } from 'antd'
 import usmntIcon from '../../images/usmnt_fan_hub_icon.png'
 import golfIcon from '../../images/golf_stat_caddy_icon.png'
 import abIcon from '../../images/absolute_builders_icon.png'
+import scIcon from '../../images/sound_county_icon.png'
 import './Projects.css'
 
 const { Search } = Input
@@ -22,6 +23,12 @@ const personalProjects = [
         tags: ['UIkit', 'Firebase', 'Swift', 'Google Admob'],
         links: ['https://apps.apple.com/us/app/golf-stat-caddy/id1437417339', 'https://github.com/LeonDJ7/golf-stat-caddy'],
         icon: golfIcon,
+    },
+    {
+        name: 'Sound County',
+        tags: ['spotify-web-api-node', 'TypeScript', 'React', 'Chart.js', 'Express.js', 'Node.js', 'Heroku', 'Ant Design', 'HTML', 'CSS', 'Figma', 'SmtpJS'],
+        links: ['https://sound-county.herokuapp.com/', 'https://github.com/LeonDJ7/sound-county'],
+        icon: scIcon,
     },
 ]
 

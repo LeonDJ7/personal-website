@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import 'antd/dist/antd.css'
 import { Button, Avatar, Dropdown, Menu } from 'antd'
 import { UserOutlined, MenuOutlined } from '@ant-design/icons'
@@ -16,12 +16,13 @@ const NavBar = (props) => {
 
         return (
             <div id='header' onClick={() => {setPathname('#/')}}>
-                <Link to="/">
+                <NavLink to="/">
                     <Avatar src={portfolioIcon} shape='square' size='large' icon={<UserOutlined />}/>
-                </Link>
-                <Link to="/">
-                    <span id='headerLabel' > Leon Djusberg </span>
-                </Link>
+                </NavLink>
+                <NavLink to="/">
+                    <span id='headerLabel1' > Leon Djusberg </span>
+                    <span id='headerLabel2' > LD </span>
+                </NavLink>
             </div>
         )
     }
@@ -31,29 +32,29 @@ const NavBar = (props) => {
         return (
             <span id='options' >
 
-                <Link to="/">
+                <NavLink to="/">
                     <Button id='1' onClick={() => {setPathname('#/')}} type='text' size='large' className='optionsButton'>About
                         { pathname === '#/' && <div className='selectedIndicator'></div> }
                     </Button>
-                </Link>
+                </NavLink>
 
-                <Link to="/projects">
+                <NavLink to="/projects">
                     <Button id='2' onClick={() => {setPathname('#/projects')}} type='text' size='large' className='optionsButton'>Projects
                         { pathname === '#/projects' && <div className='selectedIndicator'></div> }
                     </Button>
-                </Link>
+                </NavLink>
 
-                <Link to="/resume">
+                <NavLink to="/resume">
                     <Button id='3' onClick={() => {setPathname('#/resume')}} type='text' size='large' className='optionsButton'>Resume
                         { pathname === '#/resume' && <div className='selectedIndicator'></div> }
                     </Button>
-                </Link>
+                </NavLink>
 
-                <Link to="/contact">
+                <NavLink to="/contact">
                     <Button id='4' onClick={() => {setPathname('#/contact')}} type='text' size='large' className='optionsButton'>Contact
                         { pathname === '#/contact' && <div className='selectedIndicator'></div> }
                     </Button>
-                </Link>
+                </NavLink>
                 
             </span>
         )
@@ -65,26 +66,23 @@ const NavBar = (props) => {
             
             return (
                 <Menu>
-                    <Link to="/personal-website">
-                        <Menu.Item {...props} key="1" className='menuButton'>
-                            about
-                        </Menu.Item>
-                    </Link>
-                    <Link to="/personal-website/projects">
-                        <Menu.Item {...props} key="2" className='menuButton'>
-                            projects
-                        </Menu.Item>
-                    </Link>
-                    <Link to="/personal-website/resume">
-                        <Menu.Item {...props} key="3" className='menuButton'>
-                            resume
-                        </Menu.Item>
-                    </Link>
-                    <Link to="/personal-website/contact">
-                        <Menu.Item {...props} key="4" className='menuButton'>
-                            contact
-                        </Menu.Item>
-                    </Link>
+                    <Menu.Item {...props} onClick={() => {setPathname('#/')}} key="1" className='menuButton'>
+                        <NavLink to="/">about</NavLink>
+                    </Menu.Item>
+                    
+                    <Menu.Item {...props} onClick={() => {setPathname('#/projects')}} key="2" className='menuButton'>
+                        <NavLink to="/projects">projects</NavLink>
+                    </Menu.Item>
+                    
+                    
+                    <Menu.Item {...props} onClick={() => {setPathname('#/resume')}} key="3" className='menuButton'>
+                        <NavLink to="/resume">resume</NavLink>
+                    </Menu.Item>
+
+                    
+                    <Menu.Item {...props} onClick={() => {setPathname('#/contact')}} key="4" className='menuButton'>
+                        <NavLink to="/contact">contact</NavLink>
+                    </Menu.Item>
                 </Menu>
             )
         }

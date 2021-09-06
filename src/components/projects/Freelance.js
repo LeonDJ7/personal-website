@@ -14,9 +14,6 @@ const styles = {
         marginTop: '3%'
     },
     name: {
-        fontFamily: 'Montserrat',
-        fontWeight: '400',
-        fontSize: '16px',
         flexGrow: '1',
         display: 'flex',
         alignItems: 'center',

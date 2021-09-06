@@ -14,10 +14,10 @@ const styles = {
 
     inputContainer: {
         width: '100%',
-        paddingRight: '5%'
+        paddingRight: '2rem'
     },
     selfDescription: {
-        paddingBottom: '5%'
+        paddingBottom: '2rem'
     },
     firstName: {
         width: '48%',
@@ -40,14 +40,11 @@ const styles = {
     },
     descriptionTitle: {
         width: '100%',
-        fontFamily: 'Montserrat',
         fontWeight: '600',
-        fontSize: '24px'
+        fontSize: '1.8rem'
     },
     descriptionMessage: {
         width: '100%',
-        fontFamily: 'Montserrat',
-        fontWeight: '400',
     },
     image: {
         width: '32px',
@@ -56,7 +53,7 @@ const styles = {
         marginLeft: '1.5%',
     },
     imagesContainer: {
-        marginTop: '5%',
+        marginTop: '1rem',
         display: 'flex',
         flexDirection: 'row',
     },

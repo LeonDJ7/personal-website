@@ -1,7 +1,7 @@
 #contact-root {
     display: flex;
     flex-direction: row;
-    padding: 14% 20% 10% 20%;
+    padding: 12% 12% 12% 12%;
 }
 
 @media only screen and (max-width: 768px) {
