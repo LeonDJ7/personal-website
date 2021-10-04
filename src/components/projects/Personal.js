@@ -8,7 +8,6 @@ const styles = {
 
     parent: {
         width: '250px',
-        marginRight: '4%'
     },
     tag: {
         marginTop: '3%'

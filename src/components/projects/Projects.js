@@ -7,7 +7,9 @@ import usmntIcon from '../../images/usmnt_fan_hub_icon.png'
 import golfIcon from '../../images/golf_stat_caddy_icon.png'
 import abIcon from '../../images/absolute_builders_icon.png'
 import scIcon from '../../images/sound_county_icon.png'
+import revsLogo from '../../images/revs_logo.png'
 import './Projects.css'
+import Design from './Design.js'
 
 const { Search } = Input
 
@@ -41,25 +43,26 @@ const freelanceProjects = [
     }
 ]
 
+const designProjects = [
+    {
+        name: 'NE Revolution Logo Concept',
+        description: 'My local soccer team recently announced it\'s rebrand and I figured I\'d put my two cents into what it could look like. The team and league have changed a lot in recent years. I wanted the new badge to look more modern than the old, crayon striped one, but I also wanted to give respect to an iconic aspect of the team. My idea with this design is to have the sharper, more modern lines and edges of the upper portion growing out of the crayon text.',
+        image: revsLogo
+    }
+]
+
 const styles = {
 
     parent: {
         marginLeft: '8%',
         marginRight: '8%',
-        marginTop: '3%',
+        marginTop: '2rem',
         paddingBottom: '4%',
     },
     sectionTitle: {
         fontFamily: 'Montserrat',
         fontWeight: '600',
         fontSize: '40px'
-    },
-    projectsContainer: {
-        marginTop: '2%',
-        marginBottom: '3%',
-        overflow: 'auto',
-        display: 'flex',
-        flexDirection: 'row',
     },
 
 }
@@ -72,12 +75,16 @@ const Projects = (props) => {
         <div style={styles['parent']}>
             <Search id='projects-search' onChange={ (e) => { setTagFilter(e.target.value) }} placeholder='search by tag...' />
             <Divider orientation="left" style={styles['sectionTitle']}>Personal</Divider>
-            <div style={styles['projectsContainer']}>
+            <div id='projects-container'>
                 { personalProjects.map((item,i) => { if (item.tags.find(tag => tag.toLowerCase().includes(tagFilter.toLowerCase())) ) { return (<Personal key={i} images={item.images} name={item.name} tags={item.tags} links={item.links} icon={item.icon} />)}} )}
             </div>
             <Divider orientation="left" style={styles['sectionTitle']}>Freelance</Divider>
-            <div style={styles['projectsContainer']}>
+            <div id='projects-container'>
                 { freelanceProjects.map((item,i) => { if (item.tags.find(tag => tag.toLowerCase().includes(tagFilter.toLowerCase())) ) { return <Freelance key={i} images={item.images} name={item.name} tags={item.tags} links={item.links} icon={item.icon} /> }} )}
+            </div>
+            <Divider orientation="left" style={styles['sectionTitle']}>Design</Divider>
+            <div id='projects-container'>
+                { designProjects.map((item,i) => { return <Design key={i} name={item.name} description={item.description} image={item.image} /> } )}
             </div>
         </div>
     )

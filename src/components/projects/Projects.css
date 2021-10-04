@@ -3,8 +3,24 @@
     float: right;
 }
 
+#projects-container {
+    margin-top: 1.2rem;
+    margin-bottom: 2.2rem;
+    gap: 2rem;
+    overflow: auto;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+}
+
 @media only screen and (max-width: 768px) {
+
     #projects-search {
         width: 50%;
     }
+
+    #projects-container {
+        flex-wrap: nowrap;
+    }
+
 }
