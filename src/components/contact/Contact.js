@@ -1,11 +1,10 @@
 import React from 'react'
-import config from '../../config'
 import 'antd/dist/antd.css'
 import { Button, Input, Typography, Alert } from 'antd'
 import linkedin from '../../images/linkedin_icon.png'
 import github from '../../images/github_icon.png'
 import instagram from '../../images/instagram_icon.png'
-import './Contact.css'
+import '../../css/Contact.css'
 
 
 const { TextArea } = Input;
@@ -81,10 +80,10 @@ const Contact = (props) => {
 
             window.Email.send({
                 Host : "smtp.gmail.com",
-                Username : 'leondjust7@gmail.com',
-                Password: config.GMAIL_PASSWORD,
-                To : 'leondjust7@gmail.com',
-                From : 'leondjust7@gmail.com',
+                Username : 'revsguy5@gmail.com',
+                Password: process.env.REACT_APP_EMAIL_PASSWORD,
+                To : 'revsguy5@gmail.com',
+                From : 'revsguy5@gmail.com',
                 Subject : name + ' sent you a message',
                 Body : 'Name: ' + name + ' <br/> Email: ' + email + ' <br> Message: ' + message,
             })
@@ -181,7 +180,7 @@ const Contact = (props) => {
                     Feel free to reach out, about literally anything
                 </Typography>
                 <p style={styles['descriptionMessage']}>
-                    I'm very open to any projects ideas, internship opportunities, freelance opportunities, etc...
+                    I'm very open to any projects ideas, work/freelance opportunities, etc...
                 </p>
                 <div style={styles['imagesContainer']}>
                     <input onClick={() => { redirect('https://www.linkedin.com/in/leon-djusberg-53a975194/') }} style={styles['image']} type='image' src={linkedin} alt=''/>

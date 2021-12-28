@@ -26,13 +26,17 @@ const styles = {
         flexDirection: 'column',
         alignItems: 'center',
         marginTop: '3%'
-    }
+    },
+    tagContainer: {
+        margin: '1rem 0 1rem 0',
+    },
 
 }
 
 const Design = (props) => {
 
     const image = props.image
+    const tags = props.tags
     const name = props.name
     const description = props.description
 
@@ -47,6 +51,9 @@ const Design = (props) => {
             }}/>
             <div style={styles['infoContainer']}>
                 <Typography style={styles['name']}>{name}</Typography>
+                <div style={styles['tagContainer']}>
+                    {tags.map((item, i) => <Tag style={styles['tag']} key={i} color={'lime'} > {item} </Tag>)}
+                </div>
                 <Typography style={styles['description']}>{description}</Typography>
             </div>
         </div>

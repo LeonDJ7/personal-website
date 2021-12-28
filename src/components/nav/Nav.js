@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom"
 import 'antd/dist/antd.css'
 import { Button, Avatar, Dropdown, Menu } from 'antd'
 import { UserOutlined, MenuOutlined } from '@ant-design/icons'
-import portfolioIcon from '../images/portfolio_icon.png'
-import './NavBar.css'
+import portfolioIcon from '../../images/portfolio_icon.png'
+import '../../css/Nav.css'
 
-const NavBar = (props) => {
+const Nav = (props) => {
 
     const [pathname, setPathname] = React.useState(window.location.hash)
 
@@ -105,4 +105,4 @@ const NavBar = (props) => {
     )
 }
 
-export default NavBar
+export default Nav
